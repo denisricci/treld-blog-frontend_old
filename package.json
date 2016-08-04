@@ -1,0 +1,27 @@
+{
+  "name": "treld-blog-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisricci/treld-blog-frontend.git"
+  },
+  "author": "Denis Ricci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denisricci/treld-blog-frontend/issues"
+  },
+  "homepage": "https://github.com/denisricci/treld-blog-frontend#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-imagemin": "^2.3.0"
+  }
+}

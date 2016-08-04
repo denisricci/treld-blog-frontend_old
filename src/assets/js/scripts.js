@@ -7,7 +7,7 @@ function init() {
     var page = getPageParameter();
 
     if (title) {
-        findByUrl(title);
+        findByUrl(title).then(writePost);
     } else {
         findAllPaginated(page).then(writePost);
     }

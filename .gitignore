@@ -10,3 +10,7 @@
 *.ipr
 *.iws
 .idea/
+
+# Node
+/dist/*
+/node_modules/*

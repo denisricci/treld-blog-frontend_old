@@ -27,13 +27,11 @@ function ajax(url, options) {
                 }
             }
         }
-
         request.send(settings.body);
     });
 
     return promise;
 }
-
 
 function extend(obj1, obj2) {
     if (obj1 == undefined) {
