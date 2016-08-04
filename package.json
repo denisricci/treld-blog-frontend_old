@@ -18,10 +18,15 @@
   },
   "homepage": "https://github.com/denisricci/treld-blog-frontend#readme",
   "devDependencies": {
+    "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean": "^0.3.2",
+    "gulp-csslint": "^0.3.1",
     "gulp-cssmin": "^0.1.7",
-    "gulp-imagemin": "^2.3.0"
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
   }
 }

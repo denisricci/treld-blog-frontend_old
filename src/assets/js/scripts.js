@@ -17,19 +17,24 @@ function init() {
 
 function writePost(posts) {
     getTemplate().then(function (template) {
-        var main = document.getElementsByTagName("main")[0];
-        var strAllPosts = "";
-        posts.forEach(function (post) {
-            var strPost = template;
-            strPost = strPost.replace('@body', '<p>'.concat(post.body).concat('</p>'));
-            strPost = strPost.replace('@publicationDate', milisecondsToDate(post.publicationDate));
-            strPost = strPost.replace('@title', post.title);
-            strPost = strPost.replace('@category', post.category);
-            strPost = strPost.replace('@author', post.author);
-            strPost = strPost.replace('@tags', buildTags(post.tags));
-            strAllPosts += strPost;
-        });
-        main.innerHTML += strAllPosts;
+        var main = document.getElementsByTagName("main")[0];        
+
+        this.write = function (post) {
+                var strPost = template;
+                strPost = strPost.replace('@body', '<p>'.concat(post.body).concat('</p>'));
+                strPost = strPost.replace('@publicationDate', milisecondsToDate(post.publicationDate));
+                strPost = strPost.replace('@title', post.title);
+                strPost = strPost.replace('@category', post.category);
+                strPost = strPost.replace('@author', post.author);
+                strPost = strPost.replace('@tags', buildTags(post.tags));                
+                main.innerHTML += strPost;
+            }
+        
+        if(posts.constructor === Array){
+            posts.forEach(write);            
+        }else{
+            write(posts);
+        }        
     });
 }
 
