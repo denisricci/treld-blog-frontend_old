@@ -40,6 +40,8 @@ gulp.task('server', function(){
 		}
 	});
 
+	gulp.watch('src/**/*').on('change', browserSync.reload);
+
 	gulp.watch('src/assets/js/**/*.js', function(event){
 		gulp.src(event.path).pipe(jshint()).pipe(jshint.reporter(jshintStylish));
 	});
