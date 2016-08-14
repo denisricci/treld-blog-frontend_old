@@ -9,6 +9,7 @@ var browserSync = require('browser-sync');
 var jshint = require('gulp-jshint');
 var jshintStylish = require('jshint-stylish');
 var csslint = require('gulp-csslint');
+var Server = require('karma').Server;
 
 gulp.task('default', ['copy'], function(){
 	gulp.start('build-image', 'usemin');
@@ -31,6 +32,13 @@ gulp.task('usemin', function(){
 		'js':[uglify],
 		'css':[prefixer, cssmin]
 	})).pipe(gulp.dest('dist'));
+});
+
+gulp.task('test', function(done){
+	return new Server({
+		configFile : __dirname + '/karma.conf.js',
+		singleRun  : true
+	}, done).start();
 });
 
 gulp.task('server', function(){
